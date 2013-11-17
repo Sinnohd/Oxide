@@ -1,0 +1,1097 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a10" title="">
+  <file path="controller.php" hash="3a08cb0cb12e256e584f365ad11d2465" package="Oxide/core/base/controller">
+    <docblock line="2">
+      <description><![CDATA[Easy controller, calls the modules in the controller subdirectory and the associated functions inside, based on the URL.]]></description>
+      <long-description><![CDATA[<p>As example: http://.../controller/test/info/...  Calls module test and function info defined in test.
+Controller provides already configuration and logger class.</p>]]></long-description>
+      <tag line="2" name="author" description="Jens Brey &lt;jens@brey.biz&gt;"/>
+      <tag line="2" name="since" description="1.0"/>
+      <tag line="2" name="package" description="Oxide/core/base/controller"/>
+    </docblock>
+    <include line="14" type="Include" package="Default">
+      <name>core/include/helper.php</name>
+    </include>
+    <include line="35" type="Include" package="Default">
+      <name/>
+    </include>
+    <include line="46" type="Include" package="Default">
+      <name/>
+    </include>
+  </file>
+  <file path="core/classes/session.class.php" hash="3bc657b9a3c5cb1ba02d8bff35c9a9ad" package="Oxide/core/class">
+    <docblock line="3">
+      <description><![CDATA[Session Management based on default PHP implementation]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="author" description="Jens Brey &lt;jens@brey.biz&gt;"/>
+      <tag line="3" name="since" description="1.0"/>
+      <tag line="3" name="package" description="Oxide/core/class"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="17" package="Oxide/core/class/session">
+      <extends/>
+      <name>session</name>
+      <full_name>\session</full_name>
+      <docblock line="12">
+        <description><![CDATA[Session Management Class]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="12" name="package" description="Oxide/core/class/session"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="24" package="Oxide/core/class/session">
+        <name>validate_session</name>
+        <full_name>validate_session</full_name>
+        <docblock line="20">
+          <description><![CDATA[Function: Verify if session is valid]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="20" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="33" package="Oxide/core/class/session">
+        <name>create_session</name>
+        <full_name>create_session</full_name>
+        <docblock line="29">
+          <description><![CDATA[Function: Creates a session]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="29" name="return" description="sid" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="49" package="Oxide/core/class/session">
+        <name>join_session</name>
+        <full_name>join_session</full_name>
+        <docblock line="45">
+          <description><![CDATA[Function: Joins an existing session]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="45" name="return" description="sid of existing session" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="61" package="Oxide/core/class/session">
+        <name>destroy_session</name>
+        <full_name>destroy_session</full_name>
+        <docblock line="58">
+          <description><![CDATA[Function: Destroys an existing session]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="69" package="Oxide/core/class/session">
+        <name>close_session</name>
+        <full_name>close_session</full_name>
+        <docblock line="66">
+          <description><![CDATA[Function: Close an existing session]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="core/classes/user.class.php" hash="d392b931f43d39ebc5d049582d798ccd" package="Oxide/core/class">
+    <docblock line="2">
+      <description><![CDATA[User abstraction/reflection class.]]></description>
+      <long-description><![CDATA[<p>Used to use various backends for authentication, like LDAP. Per default it points to MySQL DB based authentication.</p>]]></long-description>
+      <tag line="2" name="author" description="Jens Brey &lt;jens@brey.biz&gt;"/>
+      <tag line="2" name="since" description="1.0"/>
+      <tag line="2" name="package" description="Oxide/core/class"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="16" package="Oxide/core/class/user">
+      <extends/>
+      <name>user</name>
+      <full_name>\user</full_name>
+      <docblock line="11">
+        <description><![CDATA[User management abstraction class, points per default to MySQL DB based authentication.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="11" name="uses" description="\global\&amp;" refers="\global\&amp;"/>
+        <tag line="11" name="package" description="Oxide/core/class/user"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="27" package="Oxide/core/class/user">
+        <name>create</name>
+        <full_name>create</full_name>
+        <docblock line="19">
+          <description><![CDATA[Function: create user]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="19" name="param" description="string Username" type="\username" variable="$username">
+            <type by_reference="false">\username</type>
+          </tag>
+          <tag line="19" name="param" description="string Password" type="\password" variable="$password">
+            <type by_reference="false">\password</type>
+          </tag>
+          <tag line="19" name="param" description="string User E-Mail" type="\email" variable="$email">
+            <type by_reference="false">\email</type>
+          </tag>
+          <tag line="19" name="global" description="auth $auth"/>
+          <tag line="19" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="27">
+          <name>$username</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="27">
+          <name>$password</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="27">
+          <name>$email</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="40" package="Oxide/core/class/user">
+        <name>login</name>
+        <full_name>login</full_name>
+        <docblock line="33">
+          <description><![CDATA[Function: user login]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="33" name="param" description="string Username" type="\username" variable="$username">
+            <type by_reference="false">\username</type>
+          </tag>
+          <tag line="33" name="param" description="string Password" type="\password" variable="$password">
+            <type by_reference="false">\password</type>
+          </tag>
+          <tag line="33" name="global" description="auth $auth"/>
+          <tag line="33" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="40">
+          <name>$username</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="40">
+          <name>$password</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="53" package="Oxide/core/class/user">
+        <name>forgot_password</name>
+        <full_name>forgot_password</full_name>
+        <docblock line="46">
+          <description><![CDATA[Function: sends mail with pw reset link.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="46" name="param" description="string Username" type="\username" variable="$username">
+            <type by_reference="false">\username</type>
+          </tag>
+          <tag line="46" name="param" description="string User E-Mail" type="\email" variable="$email">
+            <type by_reference="false">\email</type>
+          </tag>
+          <tag line="46" name="global" description="auth $auth"/>
+          <tag line="46" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="53">
+          <name>$username</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="53">
+          <name>$email</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="core/classes/configuration.class.php" hash="cd2b93ffbf2c9c17bd5e8bcafd3c9319" package="Oxide/core/class">
+    <docblock line="2">
+      <description><![CDATA[Configuration class, provides configuration variables as objects and does basic verification]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Jens Brey &lt;jens@brey.biz&gt;"/>
+      <tag line="2" name="since" description="1.0"/>
+      <tag line="2" name="package" description="Oxide/core/class"/>
+    </docblock>
+    <include line="111" type="Include" package="Default">
+      <name>./config.php</name>
+    </include>
+    <class final="false" abstract="false" namespace="global" line="16" package="Oxide/core/class/configuration">
+      <extends/>
+      <name>configuration</name>
+      <full_name>\configuration</full_name>
+      <docblock line="11">
+        <description><![CDATA[Configuration class, reads config.php file, applies some basic checks and creates a configuration object.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="11" name="uses" description="\global\" refers="\global\"/>
+        <tag line="11" name="package" description="Oxide/core/class/configuration"/>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="22" namespace="global" package="Default">
+        <name>$db_username</name>
+        <default><![CDATA[]]></default>
+        <docblock line="18">
+          <description><![CDATA[DB Username]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="27" namespace="global" package="Default">
+        <name>$db_password</name>
+        <default><![CDATA[]]></default>
+        <docblock line="23">
+          <description><![CDATA[DB Password]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="23" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="32" namespace="global" package="Default">
+        <name>$db_host</name>
+        <default><![CDATA[]]></default>
+        <docblock line="28">
+          <description><![CDATA[DB Host]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="28" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="37" namespace="global" package="Default">
+        <name>$db_database</name>
+        <default><![CDATA[]]></default>
+        <docblock line="33">
+          <description><![CDATA[DB used]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="33" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="42" namespace="global" package="Default">
+        <name>$db_port</name>
+        <default><![CDATA[]]></default>
+        <docblock line="38">
+          <description><![CDATA[DB port]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="38" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="47" namespace="global" package="Default">
+        <name>$pw_salt</name>
+        <default><![CDATA[]]></default>
+        <docblock line="43">
+          <description><![CDATA[General PW salt for this Oxide installation]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="43" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="52" namespace="global" package="Default">
+        <name>$session_salt</name>
+        <default><![CDATA[]]></default>
+        <docblock line="48">
+          <description><![CDATA[Session Salt for this Oxide installation (unused so far)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="48" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="57" namespace="global" package="Default">
+        <name>$log_file</name>
+        <default><![CDATA[]]></default>
+        <docblock line="53">
+          <description><![CDATA[General logfile]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="53" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="62" namespace="global" package="Default">
+        <name>$audit_log_file</name>
+        <default><![CDATA[]]></default>
+        <docblock line="58">
+          <description><![CDATA[Audit logfile]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="58" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="67" namespace="global" package="Default">
+        <name>$auth_backend</name>
+        <default><![CDATA[]]></default>
+        <docblock line="63">
+          <description><![CDATA[Used Authentication backend, per default MySQL DB.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="63" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="72" namespace="global" package="Default">
+        <name>$rd_host</name>
+        <default><![CDATA[]]></default>
+        <docblock line="68">
+          <description><![CDATA[Redis host, necessary if Redis is used in a project.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="68" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="77" namespace="global" package="Default">
+        <name>$rd_port</name>
+        <default><![CDATA[]]></default>
+        <docblock line="73">
+          <description><![CDATA[Redis TCP port.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="73" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="82" namespace="global" package="Default">
+        <name>$rd_auth</name>
+        <default><![CDATA[]]></default>
+        <docblock line="78">
+          <description><![CDATA[Redis Authentication.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="78" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="87" namespace="global" package="Default">
+        <name>$template_name</name>
+        <default><![CDATA[]]></default>
+        <docblock line="83">
+          <description><![CDATA[Rain TPL Template to use]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="83" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="92" namespace="global" package="Default">
+        <name>$upload_dir</name>
+        <default><![CDATA[]]></default>
+        <docblock line="88">
+          <description><![CDATA[Upload directory]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="88" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="public" line="97" namespace="global" package="Default">
+        <name>$autodj_base</name>
+        <default><![CDATA[]]></default>
+        <docblock line="93">
+          <description><![CDATA[Base directory for AutoDJ]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="93" name="var" description="" type="\type">
+            <type by_reference="false">\type</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="102" package="Oxide/core/class/configuration">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="99">
+          <description><![CDATA[Function: Default constructor, calls init().]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="109" package="Oxide/core/class/configuration">
+        <name>init</name>
+        <full_name>init</full_name>
+        <docblock line="106">
+          <description><![CDATA[Function: initialize configuration object, used via global space.]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+    </class>
+    <markers>
+      <todo line="113">Check if this parameters are set</todo>
+      <todo line="121">Check for salt length. Limit to 30 Characters...</todo>
+      <todo line="125">Check if file location exists and is writable</todo>
+    </markers>
+  </file>
+  <file path="core/classes/tinystats.class.php" hash="84319ff5989e57a89ce2f88f432cc746" package="Oxide/core/class">
+    <docblock line="2">
+      <description><![CDATA[Tinystats, provides some statistics from the TinyStack setup]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Jens Brey &lt;jens@brey.biz&gt;"/>
+      <tag line="2" name="since" description="1.0"/>
+      <tag line="2" name="package" description="Oxide/core/class"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="15" package="Oxide/core/class/tinystats">
+      <extends/>
+      <name>tinystats</name>
+      <full_name>\tinystats</full_name>
+      <docblock line="11">
+        <description><![CDATA[TinyStack statistics class.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="11" name="package" description="Oxide/core/class/tinystats"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="21" package="Oxide/core/class/tinystats">
+        <name>keylist</name>
+        <full_name>keylist</full_name>
+        <docblock line="17">
+          <description><![CDATA[Testfunction, which dumps all keys from TinyStack's Redis server.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="17" name="global" description="type $tredis"/>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="core/classes/redis.class.php" hash="b16bdc8b590e53c799fecf504134692e" package="Oxide/core/class">
+    <docblock line="2">
+      <description><![CDATA[Redis accessiability class]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Jens Brey &lt;jens@brey.biz&gt;"/>
+      <tag line="2" name="since" description="1.0"/>
+      <tag line="2" name="package" description="Oxide/core/class"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="16" package="Oxide/core/class/redis">
+      <extends/>
+      <name>redis</name>
+      <full_name>\redis</full_name>
+      <docblock line="11">
+        <description><![CDATA[Redis access class
+We leverage for connectivity to Redis (<a href="http://redis.io/">http://redis.io/</a>) the phpRedis software (<a href="https://github.com/nicolasff/phpredis/blob/master/README.markdown">https://github.com/nicolasff/phpredis/blob/master/README.markdown</a>).]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="11" name="package" description="Oxide/core/class/redis"/>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="23" namespace="global" package="Default">
+        <name>$redis</name>
+        <default><![CDATA[]]></default>
+        <docblock line="19">
+          <description><![CDATA[General redis object to work on]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="19" name="var" description="" type="\type">
+            <type by_reference="false">\type</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="29" package="Oxide/core/class/redis">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="25">
+          <description><![CDATA[Redis Class default constructor, checks if extension is available and connects to Redis server.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="25" name="global" description="type $conf"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="45" package="Oxide/core/class/redis">
+        <name>__deconstruct</name>
+        <full_name>__deconstruct</full_name>
+        <docblock line="42">
+          <description><![CDATA[Redis de-structor, disconnects from Redis server and destroys class]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="55" package="Oxide/core/class/redis">
+        <name>connect</name>
+        <full_name>connect</full_name>
+        <docblock line="49">
+          <description><![CDATA[Redis connect - Connects to Redis server.]]></description>
+          <long-description><![CDATA[<p>Usually called by constructor</p>]]></long-description>
+          <tag line="49" name="param" description="" type="\type" variable="$auth">
+            <type by_reference="false">\type</type>
+          </tag>
+          <tag line="49" name="param" description="" type="\type" variable="$host">
+            <type by_reference="false">\type</type>
+          </tag>
+          <tag line="49" name="param" description="" type="\type" variable="$port">
+            <type by_reference="false">\type</type>
+          </tag>
+        </docblock>
+        <argument line="55">
+          <name>$auth</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="55">
+          <name>$host</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="55">
+          <name>$port</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="68" package="Oxide/core/class/redis">
+        <name>disconnect</name>
+        <full_name>disconnect</full_name>
+        <docblock line="65">
+          <description><![CDATA[Redis disconnect - Closes connection to Redis server.]]></description>
+          <long-description><![CDATA[<p>Usually called by de-constructor.</p>]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="78" package="Oxide/core/class/redis">
+        <name>getkeys</name>
+        <full_name>getkeys</full_name>
+        <docblock line="73">
+          <description><![CDATA[Redis getkeys() - Retrieves a list of keys, based on keyname or a placeholder]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="73" name="param" description="" type="\type" variable="$key">
+            <type by_reference="false">\type</type>
+          </tag>
+          <tag line="73" name="return" description="" type="\type">
+            <type by_reference="false">\type</type>
+          </tag>
+        </docblock>
+        <argument line="78">
+          <name>$key</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="core/classes/db.class.php" hash="b2bc68de26503a1a9adde96f2ba7f729" package="Oxide/core/class">
+    <docblock line="2">
+      <description><![CDATA[MySQL Database access]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Jens Brey &lt;jens@brey.biz&gt;"/>
+      <tag line="2" name="since" description="1.0"/>
+      <tag line="2" name="package" description="Oxide/core/class"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="16" package="Oxide/core/class/db">
+      <extends/>
+      <name>db</name>
+      <full_name>\db</full_name>
+      <docblock line="11">
+        <description><![CDATA[Mysql Database access class]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="11" name="package" description="Oxide/core/class/db"/>
+      </docblock>
+      <property final="false" static="false" visibility="public" line="22" namespace="global" package="Default">
+        <name>$mysqli</name>
+        <default><![CDATA[]]></default>
+        <docblock line="18">
+          <description><![CDATA[Default public MYSQL object to work with]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="var" description="" type="\type">
+            <type by_reference="false">\type</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="28" package="Oxide/core/class/db">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <docblock line="24">
+          <description><![CDATA[Default constructor, initiates DB connection]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="24" name="global" description="conf $conf"/>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="36" package="Oxide/core/class/db">
+        <name>__deconstruct</name>
+        <full_name>__deconstruct</full_name>
+        <docblock line="33">
+          <description><![CDATA[Default de-constructor, closing DB connection]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="48" package="Oxide/core/class/db">
+        <name>connect</name>
+        <full_name>connect</full_name>
+        <docblock line="40">
+          <description><![CDATA[Function: connect - creates connection to MySQL DB.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="40" name="param" description="string DB username" type="\username" variable="$username">
+            <type by_reference="false">\username</type>
+          </tag>
+          <tag line="40" name="param" description="string DB password" type="\password" variable="$password">
+            <type by_reference="false">\password</type>
+          </tag>
+          <tag line="40" name="param" description="string DB host" type="\host" variable="$host">
+            <type by_reference="false">\host</type>
+          </tag>
+          <tag line="40" name="param" description="string DB name" type="\database" variable="$database">
+            <type by_reference="false">\database</type>
+          </tag>
+          <tag line="40" name="param" description="int DB port, default is 3306" type="\port" variable="$port">
+            <type by_reference="false">\port</type>
+          </tag>
+        </docblock>
+        <argument line="48">
+          <name>$username</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="48">
+          <name>$password</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="48">
+          <name>$host</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="48">
+          <name>$database</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="48">
+          <name>$port</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="60" package="Oxide/core/class/db">
+        <name>disconnect</name>
+        <full_name>disconnect</full_name>
+        <docblock line="57">
+          <description><![CDATA[Function: disconnect - Disconnects from MySQL DB]]></description>
+          <long-description><![CDATA[]]></long-description>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="94" package="Oxide/core/class/db">
+        <name>query</name>
+        <full_name>query</full_name>
+        <docblock line="65">
+          <description><![CDATA[Function: query - queries MySQL DB and returns, depending on the SQL command a resultset as an string, array or boolean.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="65" name="param" description="query SQL query to run" type="string" variable="$query">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="65" name="return" description="" type="string|array|boolean">
+            <type by_reference="false">string</type>
+            <type by_reference="false">array</type>
+            <type by_reference="false">boolean</type>
+          </tag>
+          <tag line="65" name="todo" description="Write a test to check all possible sql actions and result types.&#10;Multiple Testcases:&#10;echo &quot;select a non existing line...&quot;;&#10;$band_id = $db-&gt;query(&quot;select band_id from mp3_band where name = 'not in this db'&quot;);&#10;dump($band_id);&#10;echo &quot;select a single line...&quot;;&#10;$band_id = $db-&gt;query(&quot;select band_id from mp3_band where name = 'Test'&quot;);&#10;dump($band_id);&#10;echo &quot;select multiple lines...&quot;;&#10;$band_id = $db-&gt;query(&quot;select * from mp3_band&quot;);&#10;dump($band_id);&#10;echo &quot;Successful DML test... returns true&quot;;&#10;$band_id = $db-&gt;query(&quot;insert into mp3_band (name) values ('Test23')&quot;);&#10;dump($band_id);&#10;echo &quot;Un-successful DML test.... return error...&quot;;&#10;$band_id = $db-&gt;query(&quot;insert into mp3_band (nameddd) values ('Test23')&quot;);&#10;dump($band_id);"/>
+        </docblock>
+        <argument line="94">
+          <name>$query</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="132" package="Oxide/core/class/db">
+        <name>filter_db_input</name>
+        <full_name>filter_db_input</full_name>
+        <docblock line="126">
+          <description><![CDATA[Function: filter_db_input - Checks variable for dangerous content and escapes or removes it.]]></description>
+          <long-description><![CDATA[<p>Use before you create your SQL command and filters user input.</p>]]></long-description>
+          <tag line="126" name="param" description="string Variable to filter usually retrieved via HTTP GET/POST" type="\variable" variable="$variable">
+            <type by_reference="false">\variable</type>
+          </tag>
+          <tag line="126" name="return" description="variable" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="132">
+          <name>$variable</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="142" package="Oxide/core/class/db">
+        <name>get_auto_increment_id</name>
+        <full_name>get_auto_increment_id</full_name>
+        <docblock line="138">
+          <description><![CDATA[Function: get_auto_increment_id - returns auto_increment_id from last insert statement.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="138" name="return" description="" type="\type">
+            <type by_reference="false">\type</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="core/classes/user_db.class.php" hash="6bd7dfca47ff455325056c0da6023579" package="Oxide/core/class">
+    <docblock line="2">
+      <description><![CDATA[User Authentication & Management]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Jens Brey &lt;jens@brey.biz&gt;"/>
+      <tag line="2" name="since" description="1.0"/>
+      <tag line="2" name="package" description="Oxide/core/class"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="18" package="Oxide/core/class/user/mysql-db">
+      <extends/>
+      <name>user_db</name>
+      <full_name>\user_db</full_name>
+      <docblock line="11">
+        <description><![CDATA[User Authentication & Management Class,
+Attention: This class should never accessed directly.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="11" name="package" description="Oxide/core/class/user/mysql-db"/>
+        <tag line="11" name="uses" description="\global\&amp;" refers="\global\&amp;"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="30" package="Oxide/core/class/user/mysql-db">
+        <name>create</name>
+        <full_name>create</full_name>
+        <docblock line="21">
+          <description><![CDATA[Function: create user]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="21" name="param" description="string Username" type="\username" variable="$username">
+            <type by_reference="false">\username</type>
+          </tag>
+          <tag line="21" name="param" description="string Password" type="\password" variable="$password">
+            <type by_reference="false">\password</type>
+          </tag>
+          <tag line="21" name="param" description="string User E-Mail" type="\email" variable="$email">
+            <type by_reference="false">\email</type>
+          </tag>
+          <tag line="21" name="global" description="db $db"/>
+          <tag line="21" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="30">
+          <name>$username</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="30">
+          <name>$password</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="30">
+          <name>$email</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="55" package="Oxide/core/class/user/mysql-db">
+        <name>login</name>
+        <full_name>login</full_name>
+        <docblock line="47">
+          <description><![CDATA[Function: user login]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="47" name="param" description="string Username" type="\username" variable="$username">
+            <type by_reference="false">\username</type>
+          </tag>
+          <tag line="47" name="param" description="string Password" type="\password" variable="$password">
+            <type by_reference="false">\password</type>
+          </tag>
+          <tag line="47" name="global" description="db $db"/>
+          <tag line="47" name="global" description="conf $conf"/>
+          <tag line="47" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="55">
+          <name>$username</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="55">
+          <name>$password</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="76" package="Oxide/core/class/user/mysql-db">
+        <name>create_pwhash</name>
+        <full_name>create_pwhash</full_name>
+        <docblock line="70">
+          <description><![CDATA[Function: creates crypted password and returns array with hashed password and used user specific salt.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="70" name="param" description="string Password" type="\password" variable="$password">
+            <type by_reference="false">\password</type>
+          </tag>
+          <tag line="70" name="global" description="conf $conf"/>
+          <tag line="70" name="return" description="password][user specific salt]" type="\array[crypted">
+            <type by_reference="false">\array[crypted</type>
+          </tag>
+        </docblock>
+        <argument line="76">
+          <name>$password</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="100" package="Oxide/core/class/user/mysql-db">
+        <name>forgot_password</name>
+        <full_name>forgot_password</full_name>
+        <docblock line="93">
+          <description><![CDATA[Function: sends mail with pw reset link.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="93" name="todo" description="Needs to be filled with life..."/>
+          <tag line="93" name="param" description="string Username" type="\username" variable="$username">
+            <type by_reference="false">\username</type>
+          </tag>
+          <tag line="93" name="param" description="string User E-Mail" type="\email" variable="$email">
+            <type by_reference="false">\email</type>
+          </tag>
+          <tag line="93" name="return" description="" type="boolean">
+            <type by_reference="false">boolean</type>
+          </tag>
+        </docblock>
+        <argument line="100">
+          <name>$username</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="100">
+          <name>$email</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="core/classes/logger.class.php" hash="f829995c81937dda78d5d6444cfa182d" package="Oxide/core/class">
+    <docblock line="2">
+      <description><![CDATA[Logging, implements general log and if enabled, audit log functionality.]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Jens Brey &lt;jens@brey.biz&gt;"/>
+      <tag line="2" name="since" description="1.0"/>
+      <tag line="2" name="package" description="Oxide/core/class"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="global" line="16" package="Oxide/core/class/logger">
+      <extends/>
+      <name>logger</name>
+      <full_name>\logger</full_name>
+      <docblock line="11">
+        <description><![CDATA[Logging class, provides two functions for auditing and general logging.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="11" name="uses" description="\global\configuration" refers="\global\configuration"/>
+        <tag line="11" name="package" description="Oxide/core/class/logger"/>
+      </docblock>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="23" package="Oxide/core/class/logger">
+        <name>log</name>
+        <full_name>log</full_name>
+        <docblock line="18">
+          <description><![CDATA[Function: log, provides logging into a file.]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="18" name="param" description="Message to add to the general logfile" type="string" variable="$string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="18" name="global" description="conf $conf"/>
+        </docblock>
+        <argument line="23">
+          <name>$string</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="39" package="Oxide/core/class/logger">
+        <name>audit</name>
+        <full_name>audit</full_name>
+        <docblock line="34">
+          <description><![CDATA[Function: audit, provides auditing into a file.]]></description>
+          <long-description><![CDATA[<p>Should be used to log user interactions</p>]]></long-description>
+          <tag line="34" name="param" description="Message to add to the audit logfile" type="string" variable="$string">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="34" name="global" description="conf $conf"/>
+        </docblock>
+        <argument line="39">
+          <name>$string</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="core/controller/cnt_user.php" hash="1c49bb3633ad9d71527b57f28f82707a" package="Oxide/core/controller/user">
+    <docblock line="2">
+      <description><![CDATA[User controller - Provides all actions for user management, like create, edit, delete, lock, forgot_password, .]]></description>
+      <long-description><![CDATA[<p>..</p>]]></long-description>
+      <tag line="2" name="author" description="Jens Brey &lt;jens@brey.biz&gt;"/>
+      <tag line="2" name="since" description="1.0"/>
+      <tag line="2" name="package" description="Oxide/core/controller/user"/>
+    </docblock>
+    <function namespace="global" line="24" package="Oxide/core/controller/user">
+      <name>create</name>
+      <full_name>\create</full_name>
+      <docblock line="20">
+        <description><![CDATA[Function: Create user.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="20" name="global" description="user $user"/>
+      </docblock>
+    </function>
+    <function namespace="global" line="43" package="Oxide/core/controller/user">
+      <name>logout</name>
+      <full_name>\logout</full_name>
+      <docblock line="39">
+        <description><![CDATA[Function: Logout user.]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="39" name="global" description="type $session"/>
+      </docblock>
+    </function>
+    <function namespace="global" line="55" package="Oxide/core/controller/user">
+      <name>login</name>
+      <full_name>\login</full_name>
+      <docblock line="51">
+        <description><![CDATA[User login]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="51" name="global" description="type $session"/>
+      </docblock>
+    </function>
+  </file>
+  <file path="core/controller/cnt_file.php" hash="8f91164db13d7731b598482d02d1e85d" package="Oxide/core/controller/file">
+    <docblock line="2">
+      <description><![CDATA[File controller - Provides all actions for file management, like transfer, storage]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Jens Brey &lt;jens@brey.biz&gt;"/>
+      <tag line="2" name="since" description="1.0"/>
+      <tag line="2" name="package" description="Oxide/core/controller/file"/>
+    </docblock>
+    <function namespace="global" line="18" package="Oxide/core/controller/file">
+      <name>bytesToSize1024</name>
+      <full_name>\bytesToSize1024</full_name>
+      <docblock line="12">
+        <description><![CDATA[Calculates B/KB/MB for a given int]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="12" name="param" description="" type="\type" variable="$bytes">
+          <type by_reference="false">\type</type>
+        </tag>
+        <tag line="12" name="param" description="" type="\type" variable="$precision">
+          <type by_reference="false">\type</type>
+        </tag>
+        <tag line="12" name="return" description="" type="\type">
+          <type by_reference="false">\type</type>
+        </tag>
+      </docblock>
+      <argument line="18">
+        <name>$bytes</name>
+        <default><![CDATA[]]></default>
+        <type/>
+      </argument>
+      <argument line="18">
+        <name>$precision</name>
+        <default><![CDATA[2]]></default>
+        <type/>
+      </argument>
+    </function>
+    <function namespace="global" line="27" package="Oxide/core/controller/file">
+      <name>upload</name>
+      <full_name>\upload</full_name>
+      <docblock line="23">
+        <description><![CDATA[File Upload function, stores a file, received via file extension in the specified directory]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="23" name="global" description="type $conf"/>
+      </docblock>
+    </function>
+  </file>
+  <file path="core/include/helper.php" hash="f57ebc45008034ffd3eea2240a55ab92" package="Oxide/core/support">
+    <docblock line="2">
+      <description><![CDATA[Helper file, for often used functions]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Jens Brey &lt;jens@brey.biz&gt;"/>
+      <tag line="2" name="since" description="1.0"/>
+      <tag line="2" name="package" description="Oxide/core/support"/>
+    </docblock>
+    <include line="20" type="Include" package="Default">
+      <name/>
+    </include>
+    <include line="19" type="Include" package="Default">
+      <name/>
+    </include>
+    <function namespace="global" line="16" package="Oxide/core/support">
+      <name>class_autoloader</name>
+      <full_name>\class_autoloader</full_name>
+      <docblock line="12">
+        <description><![CDATA[Function: class autoloader: Tries to detect & automatically loads the appropriate class for a new command.]]></description>
+        <long-description><![CDATA[<p>First in user directory and if this doesn't work in Oxide core directory.</p>]]></long-description>
+      </docblock>
+    </function>
+    <function namespace="global" line="28" package="Oxide/core/support">
+      <name>url_action_decoder</name>
+      <full_name>\url_action_decoder</full_name>
+      <docblock line="24">
+        <description><![CDATA[Function: url_action_decoder]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="24" name="return" description="with two values, used to identify controller and function/interface to call" type="array">
+          <type by_reference="false">array</type>
+        </tag>
+      </docblock>
+    </function>
+    <function namespace="global" line="45" package="Oxide/core/support">
+      <name>filter_input_string</name>
+      <full_name>\filter_input_string</full_name>
+      <docblock line="40">
+        <description><![CDATA[Function: remove HTML tags from input variables.]]></description>
+        <long-description><![CDATA[<p>Mostly used for data retrieved via HTTP-POST/GET</p>]]></long-description>
+        <tag line="40" name="param" description="variable Some variable" type="string" variable="$variable">
+          <type by_reference="false">string</type>
+        </tag>
+        <tag line="40" name="return" description="" type="string">
+          <type by_reference="false">string</type>
+        </tag>
+      </docblock>
+      <argument line="45">
+        <name>$variable</name>
+        <default><![CDATA[]]></default>
+        <type/>
+      </argument>
+    </function>
+    <function namespace="global" line="55" package="Oxide/core/support">
+      <name>dump</name>
+      <full_name>\dump</full_name>
+      <docblock line="51">
+        <description><![CDATA[Dumping a variable]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="51" name="param" description="" type="\type" variable="$variable">
+          <type by_reference="false">\type</type>
+        </tag>
+      </docblock>
+      <argument line="55">
+        <name>$variable</name>
+        <default><![CDATA[]]></default>
+        <type/>
+      </argument>
+    </function>
+  </file>
+  <file path="config.php" hash="e3e60a6cf764adbf9249cf1dbc533811" package="Oxide/base/config">
+    <docblock line="2">
+      <description><![CDATA[Configuration File]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Jens Brey &lt;jens@brey.biz&gt;"/>
+      <tag line="2" name="since" description="1.0"/>
+      <tag line="2" name="package" description="Oxide/base/config"/>
+    </docblock>
+  </file>
+  <file path="index.php" hash="fa30291b2eeb4885648a8a6f0bbf8700" package="Oxide/base/index">
+    <docblock line="2">
+      <description><![CDATA[Start]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="2" name="author" description="Jens Brey &lt;jens@brey.biz&gt;"/>
+      <tag line="2" name="since" description="1.0"/>
+      <tag line="2" name="package" description="Oxide/base/index"/>
+    </docblock>
+    <include line="11" type="Include" package="Default">
+      <name>core/include/helper.php</name>
+    </include>
+    <include line="13" type="Include" package="Default">
+      <name>libs/raintpl/rain.tpl.class.php</name>
+    </include>
+    <markers>
+      <todo line="34">Implement a class registry in future http://www.phppatterns.com/docs/design/the_registry</todo>
+    </markers>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <package name="Oxide/base/config" full_name="Oxide/base/config"/>
+  <package name="Oxide/base/index" full_name="Oxide/base/index"/>
+  <package name="Oxide/core/base/controller" full_name="Oxide/core/base/controller"/>
+  <package name="Oxide/core/class" full_name="Oxide/core/class"/>
+  <package name="Oxide/core/class/configuration" full_name="Oxide/core/class/configuration"/>
+  <package name="Oxide/core/class/db" full_name="Oxide/core/class/db"/>
+  <package name="Oxide/core/class/logger" full_name="Oxide/core/class/logger"/>
+  <package name="Oxide/core/class/redis" full_name="Oxide/core/class/redis"/>
+  <package name="Oxide/core/class/session" full_name="Oxide/core/class/session"/>
+  <package name="Oxide/core/class/tinystats" full_name="Oxide/core/class/tinystats"/>
+  <package name="Oxide/core/class/user" full_name="Oxide/core/class/user"/>
+  <package name="Oxide/core/class/user/mysql-db" full_name="Oxide/core/class/user/mysql-db"/>
+  <package name="Oxide/core/controller/file" full_name="Oxide/core/controller/file"/>
+  <package name="Oxide/core/controller/user" full_name="Oxide/core/controller/user"/>
+  <package name="Oxide/core/support" full_name="Oxide/core/support"/>
+  <namespace name="global" full_name="global"/>
+  <marker count="6">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>

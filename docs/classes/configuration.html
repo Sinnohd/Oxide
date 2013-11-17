@@ -1,0 +1,238 @@
+<!DOCTYPE html><html xmlns:date="http://exslt.org/dates-and-times" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>phpDocumentor » \configuration</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">phpDocumentor</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Oxide.core.class.configuration.html"><i class="icon-folder-open"></i> Oxide/core/class/configuration</a></li>
+<li><a href="../packages/Oxide.core.class.db.html"><i class="icon-folder-open"></i> Oxide/core/class/db</a></li>
+<li><a href="../packages/Oxide.core.class.logger.html"><i class="icon-folder-open"></i> Oxide/core/class/logger</a></li>
+<li><a href="../packages/Oxide.core.class.redis.html"><i class="icon-folder-open"></i> Oxide/core/class/redis</a></li>
+<li><a href="../packages/Oxide.core.class.session.html"><i class="icon-folder-open"></i> Oxide/core/class/session</a></li>
+<li><a href="../packages/Oxide.core.class.tinystats.html"><i class="icon-folder-open"></i> Oxide/core/class/tinystats</a></li>
+<li><a href="../packages/Oxide.core.class.user.html"><i class="icon-folder-open"></i> Oxide/core/class/user</a></li>
+<li><a href="../packages/Oxide.core.class.user.mysql-db.html"><i class="icon-folder-open"></i> Oxide/core/class/user/mysql-db</a></li>
+<li><a href="../packages/Oxide.core.controller.file.html"><i class="icon-folder-open"></i> Oxide/core/controller/file</a></li>
+<li><a href="../packages/Oxide.core.controller.user.html"><i class="icon-folder-open"></i> Oxide/core/controller/user</a></li>
+<li><a href="../packages/Oxide.core.support.html"><i class="icon-folder-open"></i> Oxide/core/support</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">0</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul><li>todo 
+                <span class="label label-info">6</span>
+</li></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods</li>
+<li class="method public "><a href="#__construct" title="__construct :: Function: Default constructor, calls init()."><span class="description">Function: Default constructor, calls init().</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#init" title="init :: Function: initialize configuration object, used via global space."><span class="description">Function: initialize configuration object, used via global space.</span><pre>init()</pre></a></li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties</li>
+<li class="property public "><a href="#%24audit_log_file" title="$audit_log_file :: Audit logfile"><span class="description">Audit logfile</span><pre>$audit_log_file</pre></a></li>
+<li class="property public "><a href="#%24auth_backend" title="$auth_backend :: Used Authentication backend, per default MySQL DB."><span class="description">Used Authentication backend, per default MySQL DB.</span><pre>$auth_backend</pre></a></li>
+<li class="property public "><a href="#%24autodj_base" title="$autodj_base :: Base directory for AutoDJ"><span class="description">Base directory for AutoDJ</span><pre>$autodj_base</pre></a></li>
+<li class="property public "><a href="#%24db_database" title="$db_database :: DB used"><span class="description">DB used</span><pre>$db_database</pre></a></li>
+<li class="property public "><a href="#%24db_host" title="$db_host :: DB Host"><span class="description">DB Host</span><pre>$db_host</pre></a></li>
+<li class="property public "><a href="#%24db_password" title="$db_password :: DB Password"><span class="description">DB Password</span><pre>$db_password</pre></a></li>
+<li class="property public "><a href="#%24db_port" title="$db_port :: DB port"><span class="description">DB port</span><pre>$db_port</pre></a></li>
+<li class="property public "><a href="#%24db_username" title="$db_username :: DB Username"><span class="description">DB Username</span><pre>$db_username</pre></a></li>
+<li class="property public "><a href="#%24log_file" title="$log_file :: General logfile"><span class="description">General logfile</span><pre>$log_file</pre></a></li>
+<li class="property public "><a href="#%24pw_salt" title="$pw_salt :: General PW salt for this Oxide installation"><span class="description">General PW salt for this Oxide installation</span><pre>$pw_salt</pre></a></li>
+<li class="property public "><a href="#%24rd_auth" title="$rd_auth :: Redis Authentication."><span class="description">Redis Authentication.</span><pre>$rd_auth</pre></a></li>
+<li class="property public "><a href="#%24rd_host" title="$rd_host :: Redis host, necessary if Redis is used in a project."><span class="description">Redis host, necessary if Redis is used in a project.</span><pre>$rd_host</pre></a></li>
+<li class="property public "><a href="#%24rd_port" title="$rd_port :: Redis TCP port."><span class="description">Redis TCP port.</span><pre>$rd_port</pre></a></li>
+<li class="property public "><a href="#%24session_salt" title="$session_salt :: Session Salt for this Oxide installation (unused so far)"><span class="description">Session Salt for this Oxide installation (unused so far)</span><pre>$session_salt</pre></a></li>
+<li class="property public "><a href="#%24template_name" title="$template_name :: Rain TPL Template to use"><span class="description">Rain TPL Template to use</span><pre>$template_name</pre></a></li>
+<li class="property public "><a href="#%24upload_dir" title="$upload_dir :: Upload directory"><span class="description">Upload directory</span><pre>$upload_dir</pre></a></li>
+</ul>
+</div>
+<div class="span8">
+<a name="%5Cconfiguration" id="\configuration"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/global.html">global</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/configuration.html">configuration</a>
+</li>
+</ul>
+<div href="../classes/configuration.html" class="element class">
+<p class="short_description">Configuration class, reads config.php file, applies some basic checks and creates a configuration object.</p>
+<div class="details">
+<p class="long_description"></p>
+<table class="table table-bordered">
+<tr>
+<th>uses</th>
+<td>\global\</td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Oxide.core.class.configuration.html">Oxide/core/class/configuration</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a name="__construct" id="__construct"></a><div class="element clickable method public __construct" data-toggle="collapse" data-target=".__construct .collapse">
+<h2>Function: Default constructor, calls init().</h2>
+<pre>__construct() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="init" id="init"></a><div class="element clickable method public init" data-toggle="collapse" data-target=".init .collapse">
+<h2>Function: initialize configuration object, used via global space.</h2>
+<pre>init() </pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a name="%24audit_log_file" id="$audit_log_file"> </a><div class="element clickable property public $audit_log_file" data-toggle="collapse" data-target=".$audit_log_file .collapse">
+<h2>Audit logfile</h2>
+<pre>$audit_log_file : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24auth_backend" id="$auth_backend"> </a><div class="element clickable property public $auth_backend" data-toggle="collapse" data-target=".$auth_backend .collapse">
+<h2>Used Authentication backend, per default MySQL DB.</h2>
+<pre>$auth_backend : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24autodj_base" id="$autodj_base"> </a><div class="element clickable property public $autodj_base" data-toggle="collapse" data-target=".$autodj_base .collapse">
+<h2>Base directory for AutoDJ</h2>
+<pre>$autodj_base : \type</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24db_database" id="$db_database"> </a><div class="element clickable property public $db_database" data-toggle="collapse" data-target=".$db_database .collapse">
+<h2>DB used</h2>
+<pre>$db_database : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24db_host" id="$db_host"> </a><div class="element clickable property public $db_host" data-toggle="collapse" data-target=".$db_host .collapse">
+<h2>DB Host</h2>
+<pre>$db_host : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24db_password" id="$db_password"> </a><div class="element clickable property public $db_password" data-toggle="collapse" data-target=".$db_password .collapse">
+<h2>DB Password</h2>
+<pre>$db_password : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24db_port" id="$db_port"> </a><div class="element clickable property public $db_port" data-toggle="collapse" data-target=".$db_port .collapse">
+<h2>DB port</h2>
+<pre>$db_port : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24db_username" id="$db_username"> </a><div class="element clickable property public $db_username" data-toggle="collapse" data-target=".$db_username .collapse">
+<h2>DB Username</h2>
+<pre>$db_username : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24log_file" id="$log_file"> </a><div class="element clickable property public $log_file" data-toggle="collapse" data-target=".$log_file .collapse">
+<h2>General logfile</h2>
+<pre>$log_file : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24pw_salt" id="$pw_salt"> </a><div class="element clickable property public $pw_salt" data-toggle="collapse" data-target=".$pw_salt .collapse">
+<h2>General PW salt for this Oxide installation</h2>
+<pre>$pw_salt : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24rd_auth" id="$rd_auth"> </a><div class="element clickable property public $rd_auth" data-toggle="collapse" data-target=".$rd_auth .collapse">
+<h2>Redis Authentication.</h2>
+<pre>$rd_auth : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24rd_host" id="$rd_host"> </a><div class="element clickable property public $rd_host" data-toggle="collapse" data-target=".$rd_host .collapse">
+<h2>Redis host, necessary if Redis is used in a project.</h2>
+<pre>$rd_host : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24rd_port" id="$rd_port"> </a><div class="element clickable property public $rd_port" data-toggle="collapse" data-target=".$rd_port .collapse">
+<h2>Redis TCP port.</h2>
+<pre>$rd_port : int</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24session_salt" id="$session_salt"> </a><div class="element clickable property public $session_salt" data-toggle="collapse" data-target=".$session_salt .collapse">
+<h2>Session Salt for this Oxide installation (unused so far)</h2>
+<pre>$session_salt : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24template_name" id="$template_name"> </a><div class="element clickable property public $template_name" data-toggle="collapse" data-target=".$template_name .collapse">
+<h2>Rain TPL Template to use</h2>
+<pre>$template_name : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+<a name="%24upload_dir" id="$upload_dir"> </a><div class="element clickable property public $upload_dir" data-toggle="collapse" data-target=".$upload_dir .collapse">
+<h2>Upload directory</h2>
+<pre>$upload_dir : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><p class="long_description"></p></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-10-22T00:04:10+02:00.<br></footer></div>
+</div>
+</body>
+</html>
